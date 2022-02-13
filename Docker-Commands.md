@@ -63,3 +63,29 @@ docker stop "CONTAINER ID"
 ```
 docker start "CONTAINER ID"
 ```
+
+#### Pause the container
+```
+docker pause "CONTAINER ID"
+```
+
+#### Unpause the container
+```
+docker unpause "CONTAINER ID"
+```
+
+#### Container consumption
+It shows consumption of CPU, Memory, network I/O and block I/O.
+```
+docker stats "CONTAINER ID"
+```
+
+#### Running processes
+```
+docker top "CONTAINER ID"
+```
+
+#### Logs processes
+```
+docker logs "CONTAINER ID"
+```
