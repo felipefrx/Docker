@@ -156,3 +156,40 @@ docker inspect "CONTAINER ID " | grep -i cpu
 ```
 docker update --cpu-shared 512 "CONTAINER ID"
 ```
+
+
+
+## Volumes and data-only containers
+
+#### Create a container specifying a volume 
+```
+docker run -ti -v /volume "image name"
+```
+
+#### Show the partitions 
+```
+df -h
+```
+
+#### View host volume location 
+```
+docker inspect -f {{.Mounts}} "CONTAINER ID"
+```
+
+#### Create a container by mapping a specific location on the host
+```
+docker run -ti -v /root/teste:/volume "image name"
+```
+
+#### Create a data-only container
+Data-only container volumes will be shared with other containers. This container does not need to be running.
+```
+docker create -v /data "image name"
+```
+
+#### Create a container using the data-only container 
+In this example, we will use postgresql.
+```
+docker run -d -p 5432:5432 --name pgsql --volumes-from dbdados -e PORTGRESQL_USER=docker -e POSTGRESQL_PASS=docker -e POSTGRESQL_DB=docker kamui/postgresql
+```
+**The -p parameter specifies the host port and container port. -p hostport:containerport**
