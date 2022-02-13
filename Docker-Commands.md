@@ -89,3 +89,19 @@ docker top "CONTAINER ID"
 ```
 docker logs "CONTAINER ID"
 ```
+
+#### Remove the container
+```
+docker rm "CONTAINER ID"
+```
+
+#### Remove the running container
+```
+docker rm -f "CONTAINER ID"
+```
+
+#### Remove images
+To view the image id use the command "docker images"
+```
+docker rmi "IMAGE ID"
+```
