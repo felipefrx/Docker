@@ -5,7 +5,7 @@ Main commands used in Docker.
 
 ## How to install Docker
 
-**To install Docker, the kernel version has to be equal to or greater than 3.8.**
+**To install Docker, the kernel version has to be equal to or greater than 3.8**
 
 #### Download and install docker 
 ```
@@ -45,10 +45,10 @@ docker run "image" --name example
 ```
 
 #### Run the container with the terminal 
-To exit the container without killing her press "Ctrl + P + Q"
 ```
 docker run -ti "image"
 ```
+To exit the container without killing her press "Ctrl + P + Q"
 
 #### List all images on your computer
 ```
@@ -56,10 +56,10 @@ docker images
 ```
 
 #### Back to container
-To know the container id use the "docker ps" command.
 ```
 docker attach "CONTAINER ID"
 ```
+To know the container id use the "docker ps" command.
 
 #### Stop the container
 ```
@@ -106,6 +106,7 @@ docker rm "CONTAINER ID"
 ```
 docker rm -f "CONTAINER ID"
 ```
+-f parameter forces removal.
 
 #### Remove images
 To view the image id use the command "docker images"
@@ -145,4 +146,13 @@ docker inspect "CONTAINER ID " | grep -i mem
 #### Create a container with limited CPU
 ```
 docker run -ti --cpu-shares 1024 --name "teste" "image name"
+```
+To check the change, use the command:
+```
+docker inspect "CONTAINER ID " | grep -i cpu
+```
+
+#### Change the amount of container CPU
+```
+docker update --cpu-shared 512 "CONTAINER ID"
 ```
