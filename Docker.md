@@ -192,6 +192,8 @@ In this example, we will use postgresql.
 ```
 docker run -d -p 5432:5432 --name pgsql --volumeS-from "CONTAINER ID" -e PORTGRESQL_USER=docker -e POSTGRESQL_PASS=docker -e POSTGRESQL_DB=docker kamui/postgresql
 ```
-**The -p parameter specifies the host port and container port. -p hostport:containerport**
-**The -e parameter passes the environment variables. **
-**The --volumes-from parameter imports the volume from another container.**
+**The -p parameter specifies the host port and container port: -p hostport:containerport**
+
+**The -e parameter passes the environment variables**
+
+**The --volumes-from parameter imports the volume from another container**
