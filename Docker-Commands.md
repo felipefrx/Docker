@@ -26,7 +26,40 @@ docker --version
 docker ps
 ```
 
-#### Run a container
+#### List all containers on the machine 
 ```
-docker run "Image"
+docker ps -a
+```
+
+#### Run a container
+If the image is not downloaded from your local repository, it will be downloaded from the docker website.
+```
+docker run "image"
+```
+
+#### Run the container with the terminal 
+To exit the container without killing her press "Ctrl + P + Q"
+```
+docker run -ti "image"
+```
+
+#### List all images on your computer
+```
+docker images
+```
+
+#### Back to container
+To know the container id use the "docker ps" command.
+```
+docker attach "CONTAINER ID"
+```
+
+#### Stop the container
+```
+docker stop "CONTAINER ID"
+```
+
+#### Start the container
+```
+docker start "CONTAINER ID"
 ```
