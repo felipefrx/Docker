@@ -1,6 +1,8 @@
 # Docker-Commands
 Main commands used in Docker.
 
+
+
 ## How to install Docker
 
 **To install Docker, the kernel version has to be equal to or greater than 3.8.**
@@ -19,6 +21,7 @@ docker --version
 ```
 
 
+
 ## How to manage Docker container
 
 #### List all running containers
@@ -35,6 +38,10 @@ docker ps -a
 If the image is not downloaded from your local repository, it will be downloaded from the docker website.
 ```
 docker run "image"
+```
+The --name parameter gives the container a name.
+```
+docker run "image" --name example
 ```
 
 #### Run the container with the terminal 
@@ -104,4 +111,38 @@ docker rm -f "CONTAINER ID"
 To view the image id use the command "docker images"
 ```
 docker rmi "IMAGE ID"
+```
+
+
+
+## Limit CPU and memory
+
+#### All container information 
+```
+docker inspect "CONTAINER ID"
+```
+
+#### View container memory
+```
+docker inspect "CONTAINER ID " | grep -i mem
+```
+
+#### Create a container with limited momery
+```
+docker run -ti --memory 512m --name "teste" "image name"
+```
+Remembering that the -ti parameter is used to start the container in the terminal and the --name to name the container, followed by the image.
+
+#### Change the amount of container memory  
+```
+docker upadate -m 256m "CONTAINER ID"
+```
+To check the change, use the command:
+```
+docker inspect "CONTAINER ID " | grep -i mem
+```
+
+#### Create a container with limited CPU
+```
+docker run -ti --cpu-shares 1024 --name "teste" "image name"
 ```
