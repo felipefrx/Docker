@@ -1,6 +1,6 @@
 # The first letter of the file must be capitalized 
 
-# Tt has to be the first command of the dockerfile 
+# This has to be the first command of the dockerfile 
 # Determine the base image 
 FROM debian 
 
