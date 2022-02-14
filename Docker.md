@@ -197,3 +197,44 @@ docker run -d -p 5432:5432 --name pgsql --volumeS-from "CONTAINER ID" -e PORTGRE
 **The -e parameter passes the environment variables**
 
 **The --volumes-from parameter imports the volume from another container**
+
+
+
+## Network configuration
+
+#### Configure DNS server
+```
+docker run -ti --dns 8.8.8.8 "image name"
+```
+
+#### Configure host-name
+```
+docker run -ti -hostname "hostname" "image name"
+```
+
+#### Link two containers
+```
+docker run -ti --link container1 --name container2 "image name"
+```
+
+#### Expose the container port
+```
+docker run -ti --expose 80 "image name"
+```
+
+#### Port forwarding
+```
+docker run -ti -p -- publish 8080:80 "image name" 
+```
+(hostport:containerport)
+
+#### Mac-adress
+```
+docker run -ti --mac-adress 12:34:de:b0:6b:61 "image name"
+```
+
+#### Command host
+Host network information will go to container.
+```
+docker run -ti --net=host "image name"
+```
