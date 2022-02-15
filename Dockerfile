@@ -7,7 +7,7 @@ FROM debian
 # Run commands in container 
 RUN apt-get updatte && apt-get install apache2 && apt-get clean
 
-# The command ADD throws a file from the host to the container 
+# The command throws a file from the host to the container 
 ADD example.txt /directory/
 
 # Entry point 
