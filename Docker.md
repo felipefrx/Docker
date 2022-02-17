@@ -57,7 +57,7 @@ docker images
 
 #### Back to container
 ```
-docker attach "CONTAINER ID"
+docker container attach "CONTAINER ID"
 ```
 To know the container id use the "docker ps" command.
 
