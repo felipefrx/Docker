@@ -25,7 +25,7 @@ docker --version
 sudo chmod 666 /var/run/docker.sock
 ```
 ```
-sudo setfacl --modify user::rw /var/run/docker.sock
+sudo usermod -aG docker ${USER}
 ```
 
 
