@@ -20,7 +20,7 @@ docker --version
 /etc/init.d/docker start
 ```
 
-**Got permission denied while trying to connect to the Docker daemon socket**
+Got permission denied while trying to connect to the Docker daemon socket
 ```
 sudo chmod 666 /var/run/docker.sock
 ```
